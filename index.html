@@ -1,59 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">   <!-- for future theme toggle -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saim Abbas | Python Developer</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saim Abbas | Python Developer & UI/UX</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-  <!-- ===== Hero Section ===== -->
-  <section class="hero">
-    <h1>Hi, I'm <span>Saim Abbas</span></h1>
-    <p>Python Developer | UI/UX Designer | Problem Solver</p>
-    <button class="btn">View My Work</button>
-  </section>
 
-  <!-- ===== About Section ===== -->
-  <section class="about"> 
-    <h2>About Me</h2>
-    <p>I’m a passionate Python developer with experience in Hospital Management Systems, Gaming, and Database design (MySQL). I love solving problems using modern technologies and design principles.</p>
-  </section>
-
-  <!-- ===== Skills Section ===== -->
-  <section class="skills">
-    <h2>My Skills</h2>
-    <ul>
-      <li>🐍 Python (Projects: Hospital Management System, Gaming)</li>
-      <li>💾 MySQL (Database Management)</li>
-      <li>🎨 UI/UX Design</li>
-      <li>🧠 SDLC & Problem Solving Techniques</li>
-      <li>🧩 Version Control (Git, GitHub)</li>
-    </ul>
-  </section>
-
-  <!-- ===== Projects Section ===== -->
-  <section class="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Hospital Management System</h3>
-      <p>A full-featured system made with Python and MySQL to manage patients, doctors, and reports efficiently.</p>
-      <a href="#" class="btn">View on GitHub</a>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">Saim <span>Abbas</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="project-card">
-      <h3>Python Gaming Project</h3>
-      <p>Fun arcade-style game developed using Pygame library.</p>
-      <a href="#" class="btn">View on GitHub</a>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Hi, I'm <span class="highlight">Saim Abbas</span></h1>
+      <p class="typed-text">Python Developer</p>   <!-- JS will change this -->
+      <p class="subtitle">Building efficient systems • Clean UI/UX • Problem solving enthusiast</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="#contact" class="btn secondary">Get in Touch</a>
+      </div>
     </div>
   </section>
 
-  <!-- ===== Contact Section ===== -->
-  <section class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:4saimabbas@gmail.com">saimabbas@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/" target="_blank">https://github.com/s36981375-cell/coders</a></p>
+  <!-- About -->
+  <section class="about section" id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I’m a passionate Python developer with hands-on experience in Hospital Management Systems, Arcade-style Gaming (Pygame), and robust MySQL database design. I enjoy turning complex problems into clean, scalable solutions using modern tools and thoughtful design principles.</p>
+    </div>
   </section>
+
+  <!-- Skills -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <h2>My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">🐍 Python <br><small>Core + Pygame + Scripting</small></div>
+        <div class="skill-card">💾 MySQL <br><small>Database Design & Queries</small></div>
+        <div class="skill-card">🎨 UI/UX Design <br><small>Figma + User Flows</small></div>
+        <div class="skill-card">🧠 Problem Solving <br><small>SDLC & Algorithms</small></div>
+        <div class="skill-card">🧩 Git & GitHub <br><small>Version Control</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card glass">
+          <h3>Hospital Management System</h3>
+          <p>Full CRUD application with patient/doctor management, reporting & MySQL backend.</p>
+          <div class="tech-tags">
+            <span>Python</span><span>MySQL</span><span>Tkinter</span>
+          </div>
+          <a href="https://github.com/s36981375-cell/HMS" target="_blank" class="btn">View on GitHub</a>
+        </div>
+
+        <div class="project-card glass">
+          <h3>Arcade Gaming Project</h3>
+          <p>Engaging 2D game built with Pygame – collision, scoring, levels.</p>
+          <div class="tech-tags">
+            <span>Python</span><span>Pygame</span><span>Game Logic</span>
+          </div>
+          <a href="https://github.com/s36981375-cell/coders" target="_blank" class="btn">View on GitHub</a>
+        </div>
+
+        <!-- Add more projects later -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <h2>Let's Connect</h2>
+      <p class="lead">Open to freelance projects, collaborations, or just a quick chat about Python, automation, databases, or UI/UX. 
+      I focus on clean, maintainable code, clear communication, and delivering results you're proud of — on time and within scope.!</p>
+      <div class="contact-info">
+        <a href="mailto:4saimabbas@gmail.com" class="contact-link">
+          <i class="fas fa-envelope"></i> 4saimabbas@gmail.com
+        </a>
+        <a href="https://github.com/s36981375-cell" target="_blank" class="contact-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Saim Abbas — Built with ❤️ & Programing Power </p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
