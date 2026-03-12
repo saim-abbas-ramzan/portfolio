@@ -2,71 +2,356 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background-color: #0f172a;
-  color: white;
+  background: #0d1117;          /* GitHub-like deep dark */
+  color: #e6edf3;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-section {
-  padding: 80px 10%;
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
 
-.hero {
-  text-align: center;
-  padding: 120px 10%;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
+a { text-decoration: none; color: inherit; }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.1);
 }
 
-.hero h1 span {
-  color: #38bdf8;
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.btn {
-  background: #38bdf8;
-  color: white;
-  padding: 10px 25px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
-.btn:hover {
-  background: #0284c7;
-}
+.logo span { color: #38bdf8; }
 
-.about, .skills, .projects, .contact {
-  margin-top: 40px;
-}
-
-.skills ul {
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
   list-style: none;
 }
 
-.skills li {
-  margin: 10px 0;
-  background: #1e293b;
-  padding: 10px;
-  border-radius: 5px;
+.nav-links a {
+  color: #a0aec0;
+  transition: color 0.3s;
 }
 
-.project-card {
-  background: #1e293b;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
+.nav-links a:hover { color: #38bdf8; }
+
+section.section {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.project-card a {
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0d1117 0%, #1a2332 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  margin-bottom: 1rem;
+}
+
+.highlight { color: #38bdf8; }
+
+.typed-text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #a0aec0;
+  min-height: 2.5rem;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #8b9db7;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.btn {
   display: inline-block;
-  margin-top: 10px;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin: 0.5rem;
 }
 
-.contact a {
+.primary {
+  background: #38bdf8;
+  color: #0d1117;
+}
+
+.primary:hover {
+  background: #0284c7;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.3);
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid #38bdf8;
   color: #38bdf8;
+}
+
+.secondary:hover {
+  background: rgba(56,189,248,0.1);
+  transform: translateY(-3px);
+}
+
+.glass {
+  background: rgba(30, 41, 59, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56,189,248,0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.4s ease;
+}
+
+.glass:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  border-color: rgba(56,189,248,0.4);
+}
+
+.skills-grid, .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+  margin-top: 3rem;
+}
+
+.skill-card {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 1.1rem;
+}
+
+.tech-tags {
+  display: flex;
+  gap: 0.6rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.tech-tags span {
+  background: rgba(56,189,248,0.15);
+  color: #38bdf8;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #a0aec0;
+}
+
+.contact-link:hover { color: #38bdf8; }
+
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #64748b;
+  border-top: 1px solid rgba(56,189,248,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links { gap: 1.2rem; font-size: 0.95rem; }
+  .hero { padding: 0 5%; min-height: 90vh; }
+}
+/* =============================================
+   RESPONSIVE DESIGN – Mobile + Tablet Friendly
+   ============================================= */
+
+/* Mobile phones (0 to 767px) – Navbar horizontal rakho */
+@media (max-width: 767px) {
+  body {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  .navbar {
+    padding: 12px 15px;
+  }
+
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;           /* ← Horizontal rakho mobile pe bhi */
+    flex-wrap: wrap;               /* Fit na hone par neeche aa jayenge */
+    gap: 10px;                     /* Chhota gap taake fit ho jaye */
+    margin: 0;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+  }
+
+  .hero {
+    padding: 100px 15px 60px;
+    min-height: 70vh;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .typed-text {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 60px 15px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .skills-grid, .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skill-card, .project-card {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .tech-tags {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tech-tags span {
+    font-size: 0.85rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 20px 15px;
+  }
+}
+
+/* Tablets (768px to 1023px) – 2 columns grid */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero h1 {
+    font-size: 3.8rem;
+  }
+
+  .skills-grid, .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section {
+    padding: 80px 40px;
+  }
+}
+
+/* Common fixes for all devices */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+html, body {
+  overflow-x: hidden; /* Horizontal scroll khatam */
+}
+
+/* Glass effect mobile pe light rakho */
+.glass {
+  backdrop-filter: blur(8px);
 }
