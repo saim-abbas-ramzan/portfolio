@@ -1,10 +1,37 @@
-const text = ["Python Developer", "UI/UX Designer", "Problem Solver"];
-let i = 0;
+// Typing effect
+const roles = ["Python Developer", "UI/UX Designer", "Problem Solver"];
+const typedElement = document.querySelector(".typed-text");
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-function changeText() {
-  const p = document.querySelector(".hero p");
-  p.textContent = text[i];
-  i = (i + 1) % text.length;
+function type() {
+  const currentRole = roles[roleIndex];
+  typedElement.textContent = currentRole.substring(0, charIndex);
+
+  if (!isDeleting && charIndex < currentRole.length) {
+    charIndex++;
+    setTimeout(type, 100);
+  } else if (isDeleting && charIndex > 0) {
+    charIndex--;
+    setTimeout(type, 60);
+  } else {
+    isDeleting = !isDeleting;
+    if (!isDeleting) {
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+    setTimeout(type, isDeleting ? 50 : 1500);
+  }
 }
 
-setInterval(changeText, 2000);
+type();
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
